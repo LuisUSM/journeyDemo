@@ -1,5 +1,5 @@
-//REMEMBER => '../' means "Go to the parent directory".
 import '../styles.css';
+//REMEMBER => '../' means "Go to the parent directory".
 
 export const Category = ({ categories, getCategories }) => {
 
