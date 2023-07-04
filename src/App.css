@@ -16,12 +16,8 @@ a {
 /* Style the header */
 header {
     background-color: #666;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-    color: white;
     display: grid;
-    grid-template-columns: 0.1fr 0.1fr 1fr 0.1fr;
+    grid-template-columns: 0.1fr 0.1fr 1fr 0.1fr;    
 }
 
 header a {

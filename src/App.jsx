@@ -3,17 +3,13 @@ import './App.css';
 import { Category } from './components/Category';
 import { ProductsList } from './components/ProductList';
 import { fetcher } from './hooks/fetcher';
+import { StoreLogo } from './components/StoreLogo';
 
 function App() {
-
+  
   const [categories, setCategories] = useState({ errorMessage: '', data: [] });
-  const [products, setProducts] = useState({ errorMessage: '', data: [{ 
-    id: -1,
-    catId: 0,
-    title: 'Ahoy! Get in a voyage through the waters of Offers Sea we have for you!'
-  }] });
+  const [products, setProducts] = useState({ errorMessage: '', data: [] });
 
-  //Here, we are getting the info. contained within the JSON file we created.
   useEffect(() => {
     const fetchData = async () =>
     {
@@ -36,13 +32,13 @@ function App() {
 
   return (
     <>
-      <header>
-        My Store
+      <header >
+        <StoreLogo />
       </header>
       <section>
         <nav>
           { categories.errorMessage && <div>Error: { categories.errorMessage }</div> }
-          { categories.data && <Category categories={ categories.data } getCategories={ handleOnCategoryClick }/> }
+          { categories.data && <Category categories={ categories.data } handleOnCategoryClick={ handleOnCategoryClick }/> }
         </nav>
         <article>
           <h1>Products</h1>
