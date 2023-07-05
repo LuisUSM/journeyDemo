@@ -1,4 +1,4 @@
-import { StoreLogo } from "./StoreLogo"
+import { StoreLogo } from "./StoreLogo";
 
 export const Checkout = () => {
 

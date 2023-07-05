@@ -1,8 +1,8 @@
-import { StoreLogo } from "./StoreLogo"
-import { useParams } from "react-router-dom"
-import { fetcher } from "../hooks/fetcher";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { StoreLogo } from "./StoreLogo";
+import { fetcher } from "../hooks/fetcher";
 
 export const ProductDetail = () => {
 
@@ -20,13 +20,13 @@ export const ProductDetail = () => {
         }
         fetchData(productId);
 
-    }, [productId])
+    }, [productId]);
 
     //"dangerouslySetInnerHTML". Este prop nos permite ejecutar código HTML que se encuentre dentro del string de un componente. Más, para hacerlo, necesitamos declarar una función, en este caso llamada "createMarkup()" la cual almacenará el texto y ejecutará el código HTML que contenga.
     const createMarkup = () =>
     {
         return { __html: data?.description}
-    }
+    };
 
     return (
         <>
@@ -89,12 +89,12 @@ export const ProductDetail = () => {
 
             </ProductInfoArticle>
         </>
-    )
+    );
 }
 
 const ProductInfoDescription = styled.div`
     grid-column: 1 / span 3;
-`
+`;
 
 const ProductInfoArticle = styled.article`
     display: grid;

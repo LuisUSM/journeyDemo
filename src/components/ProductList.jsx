@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { CategoryProduct } from "./CategoryProduct";
 import { StoreLogo } from "./StoreLogo";
+import { CategoryProduct } from "./CategoryProduct";
 import { fetcher } from "../hooks/fetcher";
 
 //This component retrieves and renders all the products for the corresponding category in their own page.
@@ -20,7 +20,7 @@ export const ProductList = () => {
         }
         fetchData(categoryId);
     
-    }, [categoryId])
+    }, [categoryId]);
 
     return (
         <>
@@ -28,5 +28,5 @@ export const ProductList = () => {
             { errorMessage && <div>Error: { errorMessage }</div> }
             { data && data.map( p => ( <CategoryProduct key={p.id} {...p} /> )) }
         </>
-    )
+    );
 }

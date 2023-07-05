@@ -58,7 +58,7 @@ export const CategoryProduct = ({id, title, image, specs, features, price, stock
                 </ProductInfoAction>
             </aside>
         </ProductInfoArticle>
-    )
+    );
 }
 
 //"styled-components" library for React. It allows us to stylize HTML components with CSS3 code inside JS Templates, and rename them to be used wherever we want. All in the same file!
