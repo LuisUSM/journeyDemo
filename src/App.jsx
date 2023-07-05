@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import { Category } from './components/Category';
-import { ProductsList } from './components/ProductList';
-import { fetcher } from './hooks/fetcher';
 import { StoreLogo } from './components/StoreLogo';
+import { Category } from './components/Category';
+import { fetcher } from './hooks/fetcher';
+
+//The unique business of this category is rendering the categories. That's it!
 
 function App() {
   
   const [categories, setCategories] = useState({ errorMessage: '', data: [] });
-  const [products, setProducts] = useState({ errorMessage: '', data: [] });
 
   useEffect(() => {
     const fetchData = async () =>
@@ -20,32 +20,19 @@ function App() {
   
   }, []);
 
-  const handleOnCategoryClick = (id) =>
-  {
-      const fetchData = async () =>
-      {
-        const responseObject = await fetcher(`http://localhost:3000/products?catId=${id}`);
-        setProducts(responseObject);
-      }
-      fetchData();
-  }
-
   return (
     <>
       <header >
         <StoreLogo />
       </header>
+
       <section>
         <nav>
           { categories.errorMessage && <div>Error: { categories.errorMessage }</div> }
-          { categories.data && <Category categories={ categories.data } handleOnCategoryClick={ handleOnCategoryClick }/> }
+          { categories.data && <Category categories={ categories.data }/> }
         </nav>
-        <article>
-          <h1>Products</h1>
-          { products.errorMessage && <div>Error: { products.errorMessage }</div> }
-          { products.data && <ProductsList products={ products.data }/> }
-        </article>
       </section>
+
       <footer>
         Footer
       </footer>

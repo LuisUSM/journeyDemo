@@ -9,12 +9,12 @@ export const CategoryProduct = ({id, title, image, specs, features, price, stock
     return (
         <ProductInfoArticle>
             <ProductTitle>
-                <Link to={`products/${id}`}>{title}</Link>
+                <Link to={`../products/${id}`}>{title}</Link>
             </ProductTitle>
 
             <figure>
                 <ProductImageContainer>
-                    <ProductImageContainerImage src={`./assets/${image}`} alt={title} />
+                    <ProductImageContainerImage src={`../assets/${image}`} alt={title} />
                 </ProductImageContainer>
             </figure>
 
